@@ -96,3 +96,9 @@ document.querySelector('.clear').onclick = () => {
     
     console.log('CLEARED!')
 }
+
+// handle decimal (change later)
+
+document.querySelector('.decimal').onclick = () => {
+    display.value = "HIDUP JOKOWI !!!";
+}
