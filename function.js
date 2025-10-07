@@ -1,26 +1,98 @@
-// some function for calculate
-function sum(a, b){
-    let result = a + b;
-    console.log(result);
+// variable/content holder
+let firstNumber = '';
+let operator = '';
+let waitingSecondNumber = false;
+
+
+// handle a number and display it.
+for (let i = 0; i <= 9; i++){
+    document.querySelector(`.number${i}`).onclick = function(){
+        // start fresh for second number
+        if(waitingSecondNumber){
+            display.value = i;
+            console.log(display.value);
+            waitingSecondNumber = false;
+        } else {
+            display.value += i; // add current number
+        }
+    }
 }
 
-function subtract(a, b){
-    let result = a - b;
-    console.log(result);
+// operator handle
+function operatorHandle(op){
+    firstNumber = display.value;
+
+    //console first number after picking operator
+    console.log(`first number: ${firstNumber}`);
+    operator = op; // store the operator
+    waitingSecondNumber = true; // enable the second number (new number pop into display)
 }
 
-function multiply(a, b){
-    let result = a * b;
-    console.log(result);
+// selected operator
+document.querySelector('.sum').onclick = function(){
+    operatorHandle('+')
+    display.value = '+';
+    console.log(`operator: ${operator}`);
 }
 
-function divide(a, b){
-    let result = a / b;
-    console.log(result);
+document.querySelector('.subtract').onclick = function(){
+    operatorHandle('-');
+    display.value = '-';
+    console.log(`operator: ${operator}`);
 }
 
-// tester
-sum(4, 5);
-subtract(5, 3);
-multiply(2, 2);
-divide(300, 4);
+document.querySelector('.multiply').onclick = function(){
+    operatorHandle('*')
+    display.value = '*';
+    console.log(`operator: ${operator}`);
+}
+
+document.querySelector('.divide').onclick = function(){
+    operatorHandle('/');
+    display.value = '/';
+    console.log(`operator: ${operator}`);
+}
+
+
+// Handle Equal Buttons
+document.querySelector('.result').onclick = function(){
+    let secondNumber = display.value;
+
+    let total;
+
+    switch(operator){
+        case "+":
+            total = parseFloat(firstNumber) + parseFloat(secondNumber);
+            display.value = total;
+            console.log(`total sum: ${total}`)
+            break;
+        case "-":
+            total = parseFloat(firstNumber) - parseFloat(secondNumber);
+            display.value = total;
+            console.log(`total subtract: ${total}`);
+            break;
+        case '*':
+            total = parseFloat(firstNumber) * parseFloat(secondNumber);
+            display.value = total;
+            console.log(`total multiply: ${total}`);
+            break;
+        case '/':
+            total = parseFloat(firstNumber) / parseFloat(secondNumber);
+            display.value = total;
+            console.log(`total divided: ${total}`);
+    }
+}
+
+
+// clear button
+document.querySelector('.clear').onclick = () => {
+    // clear all the values..
+    firstNumber = '';
+    operator = '';
+    waitingSecondNumber = false;
+
+    // clear the display
+    display.value = '';
+    
+    console.log('CLEARED!')
+}

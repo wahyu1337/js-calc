@@ -5,6 +5,7 @@
 body{
     font-family: arial;
     font-size: 18px;
+    font-weight: bold;
 }
 
 h1{
@@ -16,7 +17,6 @@ h1{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    border: solid black 1px;
     gap: 10px;
     width: 320px;
     justify-content: center;
@@ -25,15 +25,16 @@ h1{
 
 .display{
     border: solid black 1px;
-    width: 300px;
-    height: 35px;
+    width: 90%;
+    height:65px;
     resize: none;
-    font-size: 22px;
+    font-size: 30px;
     caret-color: transparent;
     display: block;
     padding: 8px;
     text-align: right;
     overflow: hidden;
+    border-color: #b17404f3;
 }
 
 .display:focus{
@@ -42,7 +43,7 @@ h1{
 }
 .display:hover{
     cursor: default;
-    border: solid black 2px;
+    border: solid #b17404f3 2px;
 }
 
 button{
@@ -52,14 +53,16 @@ button{
     font-size: 20px;
     border: 1px solid #aaa;
     border-radius: 8px;
-    background-color: #eee;
-
+    background-color: white;
+    color: #b17404f3;
+    border: 1.5px solid #b17404f3;
 }
+
 button:hover{
-    background-color: #ddd;
+    background-color: #b17404f3;
+    color: white;
 }
 
-.result{
-    flex-basis: 70px;
-    margin-left: auto;
+.clear{
+    width: 90%;
 }

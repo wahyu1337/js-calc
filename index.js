@@ -11,6 +11,14 @@ const display = document.createElement("textarea")
     display.classList.add('display');
     display.textContent = "";
 
+// create a button number
+const button = {};
+for (let i = 0; i <= 9; i++){
+        button[i] = document.createElement('button');
+        button[i].textContent = i;
+        button[i].classList.add(`number${i}`)
+};
+
     // adding HTML operator element
     const sum = document.createElement('button');
         sum.textContent = '+';
@@ -27,25 +35,44 @@ const display = document.createElement("textarea")
     const result = document.createElement('button');
         result.textContent = '=';
         result.classList.add('result')
+    // adding decimal button
+    const decimal = document.createElement('button');
+        decimal.textContent = '.';
+        decimal.classList.add('decimal');
     // adding clear button
     const clearButton = document.createElement('button');
         clearButton.textContent = 'C'
+        clearButton.classList.add('clear');
 
-    // append the HTML element into html document/body
+
+// append the HTML element into html document/body
 document.body.append(title);
 document.body.append(container);
 container.appendChild(display);
-    // append a button number
-    for (let i = 0; i <= 9; i++){
-        const button = document.createElement('button');
-            button.textContent = i;
-            button.classList.add(`number${i}`)
-            container.appendChild(button);
-    };
-    // append a operator & clear button to container
-    container.appendChild(sum);
-    container.appendChild(subtract);
+// append button to container / main content
+    // row 1:
+    container.appendChild(button[1]);
+    container.appendChild(button[2]);
+    container.appendChild(button[3]);
     container.appendChild(multiply);
+
+    // row 2:
+    container.appendChild(button[4]);
+    container.appendChild(button[5]);
+    container.appendChild(button[6]);
     container.appendChild(divide);
-    container.appendChild(clearButton);
+    
+    // row 3:
+    container.appendChild(button[7]);
+    container.appendChild(button[8]);
+    container.appendChild(button[9]);
+    container.appendChild(subtract);
+
+    // row 4:
+    container.appendChild(decimal);
+    container.appendChild(button[0]);
     container.appendChild(result);
+    container.appendChild(sum);
+    container.appendChild(clearButton);
+
+// button tester
