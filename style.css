@@ -34,7 +34,8 @@ h1{
     padding: 8px;
     text-align: right;
     overflow: hidden;
-    border-color: #b17404f3;
+    border: solid 2px; 
+    border-color:#b17404f3;
 }
 
 .display:focus{
@@ -43,7 +44,7 @@ h1{
 }
 .display:hover{
     cursor: default;
-    border: solid #b17404f3 2px;
+    border: solid #b17404f3 4px;
 }
 
 button{
