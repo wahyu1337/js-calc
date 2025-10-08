@@ -1,6 +1,8 @@
 // variable/content holder
 let firstNumber = '';
 let operator = '';
+let secondOperator = '';
+const secondNumber = '';
 let waitingSecondNumber = false;
 
 
@@ -26,37 +28,39 @@ function operatorHandle(op){
     console.log(`first number: ${firstNumber}`);
     operator = op; // store the operator
     waitingSecondNumber = true; // enable the second number (new number pop into display)
+
+    // handle if another operator include
+
 }
 
 // selected operator
 document.querySelector('.sum').onclick = function(){
     operatorHandle('+')
-    display.value = '+';
+    display.value += ' +';
     console.log(`operator: ${operator}`);
 }
 
 document.querySelector('.subtract').onclick = function(){
     operatorHandle('-');
-    display.value = '-';
+    display.value += ' -';
     console.log(`operator: ${operator}`);
 }
 
 document.querySelector('.multiply').onclick = function(){
     operatorHandle('*')
-    display.value = '*';
+    display.value += ' *';
     console.log(`operator: ${operator}`);
 }
 
 document.querySelector('.divide').onclick = function(){
     operatorHandle('/');
-    display.value = '/';
+    display.value += ' /';
     console.log(`operator: ${operator}`);
 }
 
-
 // Handle Equal Buttons
 document.querySelector('.result').onclick = function(){
-    let secondNumber = display.value;
+    const secondNumber = display.value;
 
     let total;
 
@@ -98,7 +102,8 @@ document.querySelector('.clear').onclick = () => {
 }
 
 // handle decimal (change later)
-
 document.querySelector('.decimal').onclick = () => {
-    display.value = "HIDUP JOKOWI !!!";
-}
+    if(!display.value.includes('.')){
+        display.value += '.';
+    }
+};

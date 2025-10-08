@@ -67,3 +67,7 @@ button:hover{
 .clear{
     width: 90%;
 }
+
+.sum, .subtract, .divide, .multiply{
+    opacity: 100%;
+}
