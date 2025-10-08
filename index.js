@@ -44,12 +44,29 @@ for (let i = 0; i <= 9; i++){
         clearButton.textContent = 'C'
         clearButton.classList.add('clear');
 
+// create backspace button
+const backspace = document.createElement('button');
+    backspace.classList.add('backspace');
+    backspace.textContent = "⌫";
 
 // append the HTML element into html document/body
 document.body.append(title);
 document.body.append(container);
 container.appendChild(display);
 // append button to container / main content
+
+    // unused space row & backspace
+    for(let i = 0; i <= 2; i++){
+        // creating unusedButton for empty space
+        let unusedButton = document.createElement('button');
+        unusedButton.classList.add(`${unusedButton[i]}`)
+        unusedButton.textContent = "";
+        unusedButton.setAttribute("style", "opacity: 0; cursor: default;");
+        
+        // appen the unused button
+        container.appendChild(unusedButton)
+    }
+    container.appendChild(backspace);
     // row 1:
     container.appendChild(button[1]);
     container.appendChild(button[2]);
