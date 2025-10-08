@@ -33,6 +33,13 @@ function operatorHandle(op){
 
 }
 
+// handle decimal (change later)
+document.querySelector('.decimal').onclick = () => {
+    if(!display.value.includes('.')){
+        display.value += '.';
+    }
+};
+
 // selected operator
 document.querySelector('.sum').onclick = function(){
     operatorHandle('+')
@@ -100,10 +107,3 @@ document.querySelector('.clear').onclick = () => {
     
     console.log('CLEARED!')
 }
-
-// handle decimal (change later)
-document.querySelector('.decimal').onclick = () => {
-    if(!display.value.includes('.')){
-        display.value += '.';
-    }
-};

@@ -7,7 +7,7 @@ This is a calculator projects using a javascript.
 
 - finishes all layout, using flexbox.
 - finishes all the function, number button, operator button, clear button etc...
-
+- updating new decimal button, decimal button now works properly. using (NOT INCLUDES "!element.includes")
 
 ** This Will be Updated frequently to keep an updated what i'm doing **
 (THE PROJECT HAVEN'T FINISH YET)
